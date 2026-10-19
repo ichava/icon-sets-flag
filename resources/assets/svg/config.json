@@ -12,7 +12,7 @@
       "iso-3166"
     ],
     "version": "0.1.0",
-    "upstream_version": "7.5.0",
+    "upstream_version": "7.6.0",
     "type": "single",
     "license": "MIT"
   },
@@ -66,7 +66,7 @@
       "type": "npm",
       "package": "flag-icons"
     },
-    "current_version": "7.5.0",
+    "current_version": "7.6.0",
     "version_check_url": "https://registry.npmjs.org/flag-icons/latest",
     "license": "MIT",
     "cdn": {
