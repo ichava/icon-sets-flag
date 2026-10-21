@@ -7,7 +7,7 @@
 The artwork is [lipis/flag-icons](https://github.com/lipis/flag-icons), vendored rather than
 fetched at runtime. The version this pack currently carries is recorded in
 `resources/assets/svg/config.json` under `upstream.current_version`, which is also what
-[`ichava/maintainer-toolkit`](https://github.com/ichava/maintainer-toolkit) compares against when it
+[`ichava/icon-sets-sync`](https://github.com/ichava/icon-sets-sync) compares against when it
 checks for a refresh.
 
 | | |
