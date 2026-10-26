@@ -21,8 +21,11 @@ checks for a refresh.
 The **artwork** is MIT, from upstream. The **integration**, the service provider, enums, component
 and configuration in this repository: is MIT under `Simtabi LLC`. See [`LICENSE`](../LICENSE).
 
-Redistributing the flags is permitted under the upstream MIT terms; keep the upstream copyright
-notice with them.
+The artwork is © Panayiotis Lipiridis and the flag-icons contributors; Simtabi LLC redistributes it
+and claims no authorship of it. Redistributing the flags is permitted under the upstream MIT terms
+on one condition: the upstream copyright and permission notice goes with every copy. That notice is
+reproduced verbatim in [`ATTRIBUTION.md`](../ATTRIBUTION.md) at the package root, which ships in the
+dist archive (`docs/` does not); keep it with the flags if you copy them out of the package.
 
 ## A note on flags as data
 
