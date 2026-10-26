@@ -76,7 +76,7 @@
     },
     "update_command": {
       "type": "github-archive",
-      "_note": "Re-runs the bundled fetch + categorise. Implement when assets need refreshing past the v7.5.0 snapshot vendored here.",
+      "_note": "Re-runs the bundled fetch + categorise. Run when assets need refreshing past the snapshot vendored here, which is `current_version`.",
       "archive_url": "https://github.com/lipis/flag-icons/archive/refs/tags/v{version}.zip",
       "source_path": "flag-icons-{version}/flags"
     }
