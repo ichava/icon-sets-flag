@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-flag` follow [Keep a Changelog](https:/
 
 ## [Unreleased]
 
+### Changed
+
+- **`sync-upstream.yml`'s header describes what the workflow runs.** It said the image bundles Python and that a release ships to Packagist. The image is icon-sets-sync's Go binary with git, gh and Node, built from the toolkit's `main`, and a release is the GitHub release that release-please and `release.yml` make; nothing is published to Packagist. Comments only: the workflow runs the same steps.
+
 ## [0.1.1] - 2026-10-26
 
 ### Added
