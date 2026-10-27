@@ -11,7 +11,7 @@
       "lipis",
       "iso-3166"
     ],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "upstream_version": "7.6.0",
     "type": "single",
     "license": "MIT"
