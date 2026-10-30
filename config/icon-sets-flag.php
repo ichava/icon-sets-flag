@@ -2,14 +2,7 @@
 
 declare(strict_types=1);
 
-use Simtabi\Laranail\Ichava\IconSetsFlag\Constants\IconsConstants;
-
 return [
-    'set' => [
-        'name'   => IconsConstants::getPackageName(),
-        'prefix' => IconsConstants::getPrefix(),
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Default Aspect Ratio
