@@ -1,21 +1,64 @@
 # ichava/icon-sets-flag
 
+[![Packagist](https://img.shields.io/packagist/v/ichava/icon-sets-flag)](https://packagist.org/packages/ichava/icon-sets-flag)
 [![Tests](https://github.com/ichava/icon-sets-flag/actions/workflows/tests.yml/badge.svg)](https://github.com/ichava/icon-sets-flag/actions/workflows/tests.yml)
-[![Code Quality](https://github.com/ichava/icon-sets-flag/actions/workflows/code-quality.yml/badge.svg)](https://github.com/ichava/icon-sets-flag/actions/workflows/code-quality.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Static analysis](https://github.com/ichava/icon-sets-flag/actions/workflows/code-quality.yml/badge.svg)](https://github.com/ichava/icon-sets-flag/actions/workflows/code-quality.yml)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> Country flag icons for the Ichava Laravel icon ecosystem — 542 SVGs in `4x3` and `1x1` ratios, vendored from `lipis/flag-icons`.
+> Country flag icons for the Ichava Laravel icon ecosystem: 542 SVGs, 271 flags in `4x3` and `1x1` ratios, vendored from `lipis/flag-icons`.
 
-This package is not published to Packagist, so there is no registry-version badge to show. Requires [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/); targets PHP `^8.4.1 || ^8.5` on Laravel `^13`.
+Requires [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/) `^0.1` on PHP `^8.4.1 || ^8.5` and Laravel `^13`.
 
 ## Install
 
+`ichava/core` and this pack come from Packagist. The `laranail/*` packages core depends on are not on Packagist yet, so the **application's** `composer.json` names them:
+
+```json
+{
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/laranail/package-tools" },
+        { "type": "vcs", "url": "https://github.com/laranail/console" },
+        { "type": "vcs", "url": "https://github.com/laranail/enumerator" },
+        { "type": "vcs", "url": "https://github.com/laranail/db-tools" }
+    ]
+}
+```
+
+Then require the pack:
+
 ```bash
 composer require ichava/icon-sets-flag
+```
+
+The service provider is discovered automatically. Core's [installation guide](https://opensource.simtabi.com/documentation/ichava/core/installation) covers core's own setup.
+
+## Quick start guide and usage
+
+### Getting started
+
+Seed the pack once after installing it, and again after upgrading it:
+
+```bash
 php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-flag
 ```
 
-The seed is not optional — until it runs the registry holds no rows for this pack and every lookup returns nothing. See core's [installation guide](https://opensource.simtabi.com/documentation/ichava/core/installation).
+The seed is not optional: until it runs the registry holds no rows for this pack and every lookup returns nothing. No configuration is needed; the defaults are merged without publishing anything.
+
+### Usage
+
+Icons are addressed as `ichava/icon-sets-flag::<ratio>/<code>`. In Blade, through core's component:
+
+```blade
+<x-ichava::icon name="ichava/icon-sets-flag::4x3/us" class="w-6 h-4" />
+```
+
+Or from PHP, through core's helper:
+
+```blade
+{{ ichava('ichava/icon-sets-flag::1x1/de')->class('w-5 h-5') }}
+```
+
+See [Getting started](docs/getting-started.md) for the full walkthrough, and the [Documentation](#documentation) index below for everything else.
 
 ## <a name="documentation"></a>Documentation
 
