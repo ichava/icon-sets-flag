@@ -7,7 +7,7 @@
 
 > Country flag icons for the Ichava Laravel icon ecosystem: 542 SVGs, 271 flags in `4x3` and `1x1` ratios, vendored from `lipis/flag-icons`.
 
-Requires [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/) `^0.1` on PHP `^8.4.1 || ^8.5` and Laravel `^13`.
+Requires [`ichava/core`](https://github.com/ichava/core) `^0.1` on PHP `^8.4.1 || ^8.5` and Laravel `^13`.
 
 ## Install
 
@@ -30,7 +30,7 @@ Then require the pack:
 composer require ichava/icon-sets-flag
 ```
 
-The service provider is discovered automatically. Core's [installation guide](https://opensource.simtabi.com/documentation/ichava/core/installation) covers core's own setup.
+The service provider is discovered automatically. Core's [installation guide](https://github.com/ichava/core/blob/main/docs/installation.md) covers core's own setup.
 
 ## Quick start guide and usage
 
@@ -62,7 +62,7 @@ See [Getting started](docs/getting-started.md) for the full walkthrough, and the
 
 ## <a name="documentation"></a>Documentation
 
-Full documentation is at **[opensource.simtabi.com/documentation/ichava/icon-sets-flag](https://opensource.simtabi.com/documentation/ichava/icon-sets-flag/)**.
+The full documentation lives in this repository, under `docs/`, and is indexed below.
 
 ### This pack
 
@@ -77,12 +77,12 @@ Full documentation is at **[opensource.simtabi.com/documentation/ichava/icon-set
 
 ### Shared across every pack
 
-- [Use an icon pack](https://opensource.simtabi.com/documentation/ichava/core/recipes/use-an-icon-pack) — addressing icons, in Blade and in PHP
-- [Seed pack icons](https://opensource.simtabi.com/documentation/ichava/core/recipes/seed-pack-icons) — the seeding pipeline and its options
-- [Check pack updates](https://opensource.simtabi.com/documentation/ichava/core/recipes/check-pack-updates) — the update checker and what its statuses mean
-- [Serve icons from a CDN](https://opensource.simtabi.com/documentation/ichava/core/recipes/serve-icons-from-a-cdn) — reading this pack's CDN templates out of `config.json`
+- [Use an icon pack](https://github.com/ichava/core/blob/main/docs/recipes/use-an-icon-pack.md) — addressing icons, in Blade and in PHP
+- [Seed pack icons](https://github.com/ichava/core/blob/main/docs/recipes/seed-pack-icons.md) — the seeding pipeline and its options
+- [Check pack updates](https://github.com/ichava/core/blob/main/docs/recipes/check-pack-updates.md) — the update checker and what its statuses mean
+- [Serve icons from a CDN](https://github.com/ichava/core/blob/main/docs/recipes/serve-icons-from-a-cdn.md) — reading this pack's CDN templates out of `config.json`
 
-Its upstream is `lipis/flag-icons`; run core's [check pack updates](https://opensource.simtabi.com/documentation/ichava/core/recipes/check-pack-updates) recipe to see whether a newer release exists.
+Its upstream is `lipis/flag-icons`; run core's [check pack updates](https://github.com/ichava/core/blob/main/docs/recipes/check-pack-updates.md) recipe to see whether a newer release exists.
 
 ## Contributing & security
 

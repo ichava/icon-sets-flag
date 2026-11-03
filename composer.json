@@ -10,7 +10,7 @@
         "svg",
         "ichava"
     ],
-    "homepage": "https://opensource.simtabi.com/products/ichava/icon-sets-flag",
+    "homepage": "https://github.com/ichava/icon-sets-flag",
     "license": "MIT",
     "authors": [
         {
@@ -95,6 +95,6 @@
         "source": "https://github.com/ichava/icon-sets-flag",
         "issues": "https://github.com/ichava/icon-sets-flag/issues",
         "security": "https://github.com/ichava/icon-sets-flag/security/policy",
-        "docs": "https://opensource.simtabi.com/documentation/ichava/icon-sets-flag/"
+        "docs": "https://github.com/ichava/icon-sets-flag/tree/main/docs"
     }
 }
