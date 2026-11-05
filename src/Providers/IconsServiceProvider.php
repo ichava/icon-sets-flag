@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Simtabi\Laranail\Ichava\IconSetsFlag\Providers;
 
-use Simtabi\Laranail\Package\Tools\Package;
-use Simtabi\Laranail\Ichava\Services\IconRegistry;
-use Simtabi\Laranail\Ichava\Support\ServiceProvider;
-use Simtabi\Laranail\Package\Tools\Exceptions\InvalidPath;
-use Simtabi\Laranail\Package\Tools\Exceptions\InvalidPackage;
+use Simtabi\Laranail\Ichava\Support\IconPackServiceProvider;
 use Simtabi\Laranail\Ichava\IconSetsFlag\Constants\IconsConstants;
 use Simtabi\Laranail\Ichava\IconSetsFlag\View\Components\IconComponent;
 
@@ -19,27 +15,15 @@ use Simtabi\Laranail\Ichava\IconSetsFlag\View\Components\IconComponent;
  * from lipis/flag-icons. The aspect ratio is the variant axis -- pick
  * one at render time.
  */
-class IconsServiceProvider extends ServiceProvider
+class IconsServiceProvider extends IconPackServiceProvider
 {
-    /**
-     * @throws InvalidPath
-     * @throws InvalidPackage
-     */
-    public function configurePackage(Package $package): void
+    protected function constantsClass(): string
     {
-        $package
-            ->setName(IconsConstants::getVendorPackage())
-            ->setPathFrom(source: $this, levelsUp: 2)
-            ->hasConfigFile('icon-sets-flag');
+        return IconsConstants::class;
     }
 
-    public function bootingPackage(): void
+    protected function componentClass(): string
     {
-        $this->loadBladeComponent(componentClass: IconComponent::class, packageName: 'icon-sets-flag');
-
-        $this->app->make(IconRegistry::class)->fromDirectory(
-            $this->package->basePath('resources/assets/svg'),
-            self::class,
-        );
+        return IconComponent::class;
     }
 }

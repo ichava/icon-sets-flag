@@ -1,7 +1,7 @@
 {
     "name": "ichava/icon-sets-flag",
     "description": "542 country flag SVGs (271 flags, each in 4x3 and 1x1) from lipis/flag-icons, for Laravel 13 on the Ichava icon ecosystem.",
-    "type": "library",
+    "type": "ichava-icon-set",
     "keywords": [
         "laravel",
         "blade",
@@ -22,9 +22,7 @@
     ],
     "require": {
         "php": "^8.4.1 || ^8.5",
-        "illuminate/support": "^13.0",
-        "ichava/core": "^0.1",
-        "laranail/package-tools": "^0.1.0"
+        "ichava/core": "^0.1"
     },
     "repositories": [
         {
