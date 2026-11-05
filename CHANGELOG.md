@@ -6,6 +6,7 @@ All notable changes to `ichava/icon-sets-flag` follow [Keep a Changelog](https:/
 
 ### Added
 
+- **`resources/assets/svg/licenses/flag-icons/LICENSE`**, flag-icons' MIT licence exactly as the sync's licence sink writes it from the npm package (owner decision, 2026-11-05). Every sync wanted to add it and the pack had never tracked it, so each run reported a licence change. `ATTRIBUTION.md`, which already quotes the same licence, is unchanged.
 - **The pack's kind is pinned against core's resolver.** `tests/Feature/SvgKindTest.php` gains cases for the D6 kind keys core now reads (ichava/core#162): `metadata.data.items` and `metadata.data.kinds.rules`, when present, hold valid kinds and globs and name files that exist; no category or the pack declares a `mixed` kind; and, with a core that has `Support\KindResolver`, a sample of items from every folder resolves `icon` from `package.kind`. `config.json` is unchanged: `package.kind` was already `icon`. `docs/configuration.md` describes the kind keys.
 
 ### Fixed
