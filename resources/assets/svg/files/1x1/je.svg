@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-je" viewBox="0 0 512 512">
   <path fill="#fff" d="M0 0h512v512H0Z"/>
-  <path d="m1.3-2.4 637.4 484.8m-637.4 0L638.7-2.4" style="-inkscape-stroke:none" transform="matrix(.79999 0 0 1.0563 0 2.5)"/>
-  <path fill="#cf142b" d="M0-2.4v29.2L280.5 240 0 453.3v29h44L320 270l275.8 212.4H640V453L359.5 240 640 26.7v-29h-44L320 209.8 44-2.4Z" style="-inkscape-stroke:none" transform="matrix(.79999 0 0 1.0563 0 2.5)"/>
+  <path d="m1.3-2.4 637.4 484.8m-637.4 0L638.7-2.4" color="#000" style="-inkscape-stroke:none" transform="matrix(.79999 0 0 1.0563 0 2.5)"/>
+  <path fill="#cf142b" d="M0-2.4v29.2L280.5 240 0 453.3v29h44L320 270l275.8 212.4H640V453L359.5 240 640 26.7v-29h-44L320 209.8 44-2.4Z" color="#000" style="-inkscape-stroke:none" transform="matrix(.79999 0 0 1.0563 0 2.5)"/>
   <path fill="#cf142b" stroke="maroon" stroke-miterlimit="140.8" stroke-width=".5" d="M303 69.3c11.6 47 5.3 104.8-47 137-52.3-32.2-58.7-90-47.1-137 12.3-11.2 68.4-18.1 94.2 0z"/>
   <path fill="gold" stroke="#806600" stroke-miterlimit="135.2" stroke-width=".3" d="M229.4 97.1a7 7 0 0 1-2.5-.4 7 7 0 0 1-1.6-2.2l-2.9.2a8 8 0 0 1-2.2-1.3 4 4 0 0 0 2.4-.9l-2.7-.5q-1.2-.6-2.2-1.5c.8-.1 1.7-.1 2.3-.8q-1.4 0-2.6-.4l-1.9-1.3q1.3 0 2.4-1l-2.5-.2L213 85a5 5 0 0 0 2.7-.8l-.6-1c-.6-1.4-2-.9-2.9-1.3a3 3 0 0 1-1.4-1.9c-.1-1 .4-2.4 2.5-2.1-1-1.7.1-3 1.3-3.4s2-.3 2.8 1.5l1.5-.8a2 2 0 0 1 2 .6v1.3c-.3.6-1 1-1.2 1.9-.2 1 .6 2.6.6 2.6l6.2 5.2 2.9 3.1h4.3l.3 7h-4.5z"/>
   <path fill="#377bc8" stroke="#2c5aa0" stroke-miterlimit="135.2" stroke-width=".3" d="M217.7 73.8a3 3 0 0 1 .8 2.6q.4.5 1 .4a1 1 0 0 0 .9-1.4c-.5-.3-.6-1.2-2.6-1.7zm-4.7.5-1.2.2a3 3 0 0 1 1.7 2q.6.3 1 0a1 1 0 0 0 .2-1.7c-.4 0-.7-.5-1.7-.5zm-1.4 4.5c-.5.1-1.3-.4-3 .9a3 3 0 0 1 2.6 1.1q.5 0 .9-.5a1 1 0 0 0-.5-1.5z"/>

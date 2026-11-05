@@ -8,8 +8,13 @@ All notable changes to `ichava/icon-sets-flag` follow [Keep a Changelog](https:/
 
 - **The pack's kind is pinned against core's resolver.** `tests/Feature/SvgKindTest.php` gains cases for the D6 kind keys core now reads (ichava/core#162): `metadata.data.items` and `metadata.data.kinds.rules`, when present, hold valid kinds and globs and name files that exist; no category or the pack declares a `mixed` kind; and, with a core that has `Support\KindResolver`, a sample of items from every folder resolves `icon` from `package.kind`. `config.json` is unchanged: `package.kind` was already `icon`. `docs/configuration.md` describes the kind keys.
 
+### Fixed
+
+- **The US and UM flags have their stars again**, in both ratios. Each draws the fifty stars as one `<marker>` repeated by `marker-mid`, and the sync's SVG policy stripped `<marker>`, so the canton shipped empty: 0 white pixels in the 4x3 US canton, against 11,050 now and upstream. Re-synced from flag-icons 7.6.0 with icon-sets-sync `00579ad` (icon-sets-sync#91). The same run keeps `color="#000"` on the drawn paths of `bo` and `je`, which the policy has allowed behind a value guard since icon-sets-sync#85; nothing else changed. `tests/Feature/StarredFlagsTest.php` fails if `us` or `um` loses the marker, its white star path or the `marker-mid` reference.
+
 ### Changed
 
+- **The upstream sync runs icon-sets-sync `00579ad`** (icon-sets-sync#91), up from `06b17d7`: the SVG policy allows `<marker>`, and a colliding emoji slug gets its own name. The `uses:` pin and `toolkit-ref` move together.
 - **The upstream sync runs icon-sets-sync `06b17d7`** (icon-sets-sync#88), up from `5d70f5d`, which also carries the `split-variants` and `exclude` transforms, the build-per-OS layout and the `licence_sha256` guard. The `uses:` pin and `toolkit-ref` move together; the reusable workflow's inputs did not change between the two commits, so the caller's `with:` block is untouched.
 - **`sync-upstream.yml` is a caller of icon-sets-sync's reusable `sync-pack.yml`**, pinned to a full commit SHA (icon-sets-sync#79). It builds the toolkit from source at that commit instead of `docker build` from `main`, grants `GITHUB_TOKEN` only `contents: read` and `issues: write` (the `contents`, `pull-requests` and `statuses: write` grants are gone: the Refresh Bot token does the writes), and opens an issue on an upstream licence change. The in-job Pest run and commit status are dropped; the sync pull request now starts the normal CI. `tests/Unit/SyncWorkflowCallerTest.php` pins the pin, the triggers and the permissions, and `symfony/yaml` joins `require-dev` for it.
 
