@@ -4,14 +4,17 @@ All notable changes to `ichava/icon-sets-flag` follow [Keep a Changelog](https:/
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-13
+
+First release of `ichava/icon-sets-flag`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-26 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
+
 ### Added
 
 - **`resources/assets/svg/licenses/flag-icons/LICENSE`**, flag-icons' MIT licence exactly as the sync's licence sink writes it from the npm package (owner decision, 2026-11-05). Every sync wanted to add it and the pack had never tracked it, so each run reported a licence change. `ATTRIBUTION.md`, which already quotes the same licence, is unchanged.
 - **The pack's kind is pinned against core's resolver.** `tests/Feature/SvgKindTest.php` gains cases for the D6 kind keys core now reads (ichava/core#162): `metadata.data.items` and `metadata.data.kinds.rules`, when present, hold valid kinds and globs and name files that exist; no category or the pack declares a `mixed` kind; and, with a core that has `Support\KindResolver`, a sample of items from every folder resolves `icon` from `package.kind`. `config.json` is unchanged: `package.kind` was already `icon`. `docs/configuration.md` describes the kind keys.
 
-### Fixed
-
-- **The US and UM flags have their stars again**, in both ratios. Each draws the fifty stars as one `<marker>` repeated by `marker-mid`, and the sync's SVG policy stripped `<marker>`, so the canton shipped empty: 0 white pixels in the 4x3 US canton, against 11,050 now and upstream. Re-synced from flag-icons 7.6.0 with icon-sets-sync `00579ad` (icon-sets-sync#91). The same run keeps `color="#000"` on the drawn paths of `bo` and `je`, which the policy has allowed behind a value guard since icon-sets-sync#85; nothing else changed. `tests/Feature/StarredFlagsTest.php` fails if `us` or `um` loses the marker, its white star path or the `marker-mid` reference.
+- **The pack declares its SVG kind.** `config.json` sets `package.kind` to `icon`, the kind ichava/core resolves for every category that names none of its own (core reads it from ichava/core#148; an older core ignores the key). `tests/Feature/SvgKindTest.php` fails on a kind core would not recognise, on a category that resolves none, and, against a core that has `IconRegistry::kindFor()`, on any category core resolves differently. `RetiredCopiesTest` also pins a non-empty description for every label core loads.
+- **`SiblingConstraintsTest` keeps every `ichava/*` constraint on the released line.** At release every ichava repository becomes one commit tagged `v0.1.0`, so 0.1.0 is the only version of any sibling. The test reads `require` and `require-dev` in `composer.json`, fails on any `ichava/*` constraint that 0.1.0 does not satisfy (checked with `composer/semver`, now a direct dev requirement), and fails when it finds no constraint to check.
 
 ### Changed
 
@@ -22,27 +25,6 @@ All notable changes to `ichava/icon-sets-flag` follow [Keep a Changelog](https:/
 
 - **Documentation links point at each repository's own `docs/`** (Sim, 2026-11-03: "all ichava repos have docs in their respective repos. thats by design"). Links to `opensource.simtabi.com/documentation/ichava/...` and the `opensource.simtabi.com/products/ichava/...` homepage, which answer 404 for every ichava page, now go to the matching `docs/*.md` on GitHub, or to the repository itself. Each target was checked to exist on that repository's `main`. The manifest's `homepage` and `support.docs` follow.
 - **The author and contact address is `ichava@simtabi.com`** (W-11, Sim 2026-11-03), replacing the community address `opensource@simtabi.com` wherever this repository named it. Vulnerability reports still go to `security@simtabi.com`. The test that guards the address expects `ichava@` now.
-
-### Fixed
-
-- The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
-  token is not allowed to create pull requests in this organisation, so the sync failed at its last
-  step after refreshing the assets.
-
-### Security
-
-- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
-
-## [0.1.0] - 2026-11-13
-
-First release of `ichava/icon-sets-flag`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-26 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
-
-### Added
-
-- **The pack declares its SVG kind.** `config.json` sets `package.kind` to `icon`, the kind ichava/core resolves for every category that names none of its own (core reads it from ichava/core#148; an older core ignores the key). `tests/Feature/SvgKindTest.php` fails on a kind core would not recognise, on a category that resolves none, and, against a core that has `IconRegistry::kindFor()`, on any category core resolves differently. `RetiredCopiesTest` also pins a non-empty description for every label core loads.
-- **`SiblingConstraintsTest` keeps every `ichava/*` constraint on the released line.** At release every ichava repository becomes one commit tagged `v0.1.0`, so 0.1.0 is the only version of any sibling. The test reads `require` and `require-dev` in `composer.json`, fails on any `ichava/*` constraint that 0.1.0 does not satisfy (checked with `composer/semver`, now a direct dev requirement), and fails when it finds no constraint to check.
-
-### Changed
 
 - **Every workflow runs on every pull request.** The `paths-ignore: '**.md'` and `paths:` filters are removed from the `pull_request` triggers, so every check reports on every pull request and can be a required status check on `main`. A path-filtered required check never reports on the pull requests it skips, and blocks them for good.
 - **PHPStan analyses at level `max`, up from 0.** `phpstan.neon.dist` now has icon-sets-bundled's shape: one counted, path-scoped ignore for the two `HasIconSetVariants` hooks PHPStan reports as unused because the trait calls them through `static::`, with `reportUnmatchedIgnoredErrors` failing the run if either stops occurring. No baseline, and no source change was needed. `PhpstanLevelTest` reads the config and fails if the level is anything but `max` or a baseline appears.
@@ -60,6 +42,19 @@ First release of `ichava/icon-sets-flag`. The repository is published as a singl
 
 - **The `commands` and `info` translation groups.** They were written for an update command and an about block this pack does not ship (core's about section reads the registry), and nothing loaded them. `tests/Feature/RetiredCopiesTest.php` keeps them out.
 - **`set.name` and `set.prefix` from the config file.** Both copied what core already reads from `config.json` through `IconsConstants`, and nothing read them. The file keeps its one real setting, `default_variant`.
+
+### Fixed
+
+- **The US and UM flags have their stars again**, in both ratios. Each draws the fifty stars as one `<marker>` repeated by `marker-mid`, and the sync's SVG policy stripped `<marker>`, so the canton shipped empty: 0 white pixels in the 4x3 US canton, against 11,050 now and upstream. Re-synced from flag-icons 7.6.0 with icon-sets-sync `00579ad` (icon-sets-sync#91). The same run keeps `color="#000"` on the drawn paths of `bo` and `je`, which the policy has allowed behind a value guard since icon-sets-sync#85; nothing else changed. `tests/Feature/StarredFlagsTest.php` fails if `us` or `um` loses the marker, its white star path or the `marker-mid` reference.
+
+
+- The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
+  token is not allowed to create pull requests in this organisation, so the sync failed at its last
+  step after refreshing the assets.
+
+### Security
+
+- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
 
 ## [Archived history]
 
